@@ -35,7 +35,7 @@ cd /omics/groups/OE0436/data/kurilov/nikolas/de_novo_colo800/bam_files
 for file in *.bam; do
 	filename="${file%.*}"
 	mkdir  ../stringtie_output2/$filename
-	StringTie -p 20 -G ../gffcompare_output/gffCompare.annotated.sorted_ver1.gtf -e -o ../work/tmp.gtf -A ../stringtie_output2/${file}.tsv -b ../stringtie_output2/${filename} ${file}
+	stringtie -p 20 -G ../gffcompare_output/gffCompare.annotated.sorted_ver1.gtf -e -o ../work/tmp.gtf -A ../stringtie_output2/${file}.tsv -b ../stringtie_output2/${filename} ${file}
 	echo $file
 done
 
